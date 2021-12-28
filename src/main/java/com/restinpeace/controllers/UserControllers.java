@@ -1,7 +1,7 @@
 package com.restinpeace.controllers;
 
 import com.restinpeace.entities.User;
-import com.restinpeace.service.UserService;
+import com.restinpeace.service.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +15,9 @@ import java.util.NoSuchElementException;
 @RequestMapping("/rest")
 public class UserControllers {
 
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
-    public UserControllers(UserService userService) {
+    public UserControllers(UserServiceImpl userService) {
         this.userService = userService;
     }
 
