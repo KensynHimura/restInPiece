@@ -3,6 +3,7 @@ package com.restinpeace.service;
 import com.restinpeace.entities.Role;
 import com.restinpeace.repository.RoleRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,6 +20,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Set<Role> allRoles() {
         return new HashSet<>(roleRepository.findAll());
     }
